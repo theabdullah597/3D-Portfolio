@@ -50,7 +50,7 @@ export function Testimonials() {
       title="What People Say"
       subtitle="Words from teammates, clients, and collaborators."
       centered
-      className="bg-[#080810]"
+      className="bg-transparent"
     >
       <div className="max-w-3xl mx-auto">
         <div className="relative">

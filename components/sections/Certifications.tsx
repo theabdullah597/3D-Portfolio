@@ -13,7 +13,7 @@ export function Certifications() {
       label="Credentials"
       title="Certifications"
       subtitle="Industry-recognized credentials validating deep technical expertise."
-      className="bg-gradient-to-b from-[#080810] via-[#0a0a14] to-[#080810]"
+      className="bg-transparent"
     >
       <motion.div
         variants={staggerContainer}

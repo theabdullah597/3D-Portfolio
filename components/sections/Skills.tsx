@@ -108,7 +108,7 @@ export function Skills() {
       label="Expertise"
       title="Skills & Technologies"
       subtitle="A curated set of tools I reach for to build exceptional products."
-      className="bg-[#080810]"
+      className="bg-transparent"
     >
       {/* Filter tabs */}
       <motion.div

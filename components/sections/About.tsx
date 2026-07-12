@@ -18,7 +18,7 @@ export function About() {
       id="about"
       label="About Me"
       title="The Story Behind the Code"
-      className="bg-gradient-to-b from-[#080810] via-[#0a0a14] to-[#080810]"
+      className="bg-transparent"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         {/* Left Column: Bio + Info */}

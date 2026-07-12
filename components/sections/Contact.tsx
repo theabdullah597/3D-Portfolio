@@ -93,7 +93,7 @@ export function Contact() {
       label="Get in Touch"
       title="Let's Build Something Amazing Together"
       subtitle="Whether you're looking for a developer to build your next web application, improve an existing platform, or collaborate on an AI-powered solution, I'd love to hear from you."
-      className="bg-gradient-to-b from-[#080810] via-[#0a0a14] to-[#080810]"
+      className="bg-transparent"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
         {/* Left: Contact info */}

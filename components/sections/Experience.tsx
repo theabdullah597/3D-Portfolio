@@ -24,7 +24,7 @@ export function ExperienceTimeline() {
       label="Career"
       title="Work Experience"
       subtitle="A decade of building software that people love to use."
-      className="bg-gradient-to-b from-[#080810] via-[#0a0a14] to-[#080810]"
+      className="bg-transparent"
     >
       <div ref={containerRef} className="relative max-w-3xl mx-auto">
         {/* Vertical timeline line */}

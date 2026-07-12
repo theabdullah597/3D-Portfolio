@@ -13,7 +13,7 @@ import dynamic from 'next/dynamic';
 // Dynamically import the 3D scene to avoid SSR issues
 const HeroScene = dynamic(() => import('@/components/three/HeroScene').then(m => ({ default: m.HeroScene })), {
   ssr: false,
-  loading: () => <div className="absolute inset-0 bg-[#080810]" />,
+  loading: () => <div className="absolute inset-0 bg-transparent" />,
 });
 
 // Typing animation hook
@@ -80,7 +80,7 @@ export function Hero() {
     <section
       id="hero"
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-[100dvh] flex flex-col items-center justify-start md:justify-center overflow-hidden"
       aria-label="Hero section"
     >
       {/* 3D Background Scene */}
@@ -100,7 +100,7 @@ export function Hero() {
       {/* Hero Content */}
       <motion.div
         style={{ x: contentX, y: contentY }}
-        className="relative z-10 container-custom w-full pt-64 md:pt-56 pb-20 mt-12 md:mt-0"
+        className="relative z-10 container-custom w-full pt-40 sm:pt-48 md:pt-56 pb-20 mt-16 md:mt-0"
       >
         <motion.div
           variants={staggerContainer}
@@ -110,9 +110,9 @@ export function Hero() {
         >
           {/* Status badge */}
           <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 mb-8">
-            <div className="glass border border-white/10 rounded-full px-4 py-2 flex items-center gap-2">
+            <div className="glass border border-white/10 rounded-2xl md:rounded-full px-4 py-3 flex items-center justify-center gap-3 w-full md:w-auto mx-auto flex-wrap">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs font-medium text-white/60">
+              <span className="text-[11px] sm:text-xs font-medium text-white/60 text-center leading-relaxed">
                 {/* @ts-ignore */}
                 {personalInfo.status || 'Available for Freelance • Open to Internship • Open to Remote Opportunities'}
               </span>

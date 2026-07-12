@@ -76,7 +76,7 @@ function ProjectCard({ project }: { project: Project }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-[#080810]/60 backdrop-blur-sm flex items-center justify-center gap-4"
+              className="absolute inset-0 bg-transparent/60 backdrop-blur-sm flex items-center justify-center gap-4"
             >
               {project.liveUrl && (
                 <motion.a
@@ -156,7 +156,7 @@ export function Projects() {
       label="Portfolio"
       title="Featured Projects"
       subtitle="A selection of work I'm proud of — from ambitious side projects to shipped products."
-      className="bg-gradient-to-b from-[#080810] via-[#0a0a14] to-[#080810]"
+      className="bg-transparent"
     >
       {/* Filter */}
       <motion.div variants={fadeInUp} className="flex flex-wrap gap-2 mb-10">

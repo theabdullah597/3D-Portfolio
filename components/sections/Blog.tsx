@@ -100,7 +100,7 @@ export function Blog() {
       label="Writing"
       title="From the Blog"
       subtitle="Deep dives into engineering, design, and the craft of building great software."
-      className="bg-[#080810]"
+      className="bg-transparent"
     >
       {/* Category filters */}
       <motion.div variants={fadeInUp} className="flex flex-wrap gap-2 mb-10">

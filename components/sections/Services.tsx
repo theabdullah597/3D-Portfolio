@@ -28,7 +28,7 @@ export function Services() {
       label="What I Do"
       title="Services"
       subtitle="End-to-end engineering across the full stack — from pixel-perfect UI to scalable infrastructure."
-      className="bg-[#080810]"
+      className="bg-transparent"
     >
       <motion.div
         variants={staggerContainer}
