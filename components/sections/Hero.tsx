@@ -109,7 +109,7 @@ export function Hero() {
           className="max-w-5xl mx-auto text-center"
         >
           {/* Status badge */}
-          <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 mb-8">
+          <motion.div variants={fadeInUp} className="mt-32 md:mt-0 inline-flex items-center gap-2 mb-8 w-full md:w-auto px-4 md:px-0">
             <div className="glass border border-white/10 rounded-2xl md:rounded-full px-4 py-3 flex items-center justify-center gap-3 w-full md:w-auto mx-auto flex-wrap">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-[11px] sm:text-xs font-medium text-white/60 text-center leading-relaxed">
