@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, Server, Pen, Cpu, Cloud, Zap, Check, ArrowRight, Layout, Shield } from 'lucide-react';
+import { Monitor, Server, Pen, Cpu, Cloud, Zap, Check, ArrowRight, Layout, Shield, LucideIcon } from 'lucide-react';
 import { SectionWrapper } from '@/components/common/SectionWrapper';
 import { services } from '@/config/portfolio';
 import { fadeInUp, staggerContainer } from '@/config/animations';
 import { cn } from '@/lib/utils';
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, LucideIcon> = {
   monitor: Monitor,
   server: Server,
   'pen-tool': Pen,

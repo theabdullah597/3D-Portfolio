@@ -10,7 +10,7 @@ export interface Project {
   longDescription: string;
   image: string;
   tags: string[];
-  category: 'fullstack' | 'frontend' | 'backend' | 'ai' | 'mobile';
+  category: 'fullstack' | 'frontend' | 'backend' | 'ai' | 'mobile' | 'ml' | 'testing';
   liveUrl?: string;
   githubUrl?: string;
   featured: boolean;
@@ -43,7 +43,7 @@ export interface Education {
 export interface Skill {
   name: string;
   level: number; // 0–100
-  category: 'frontend' | 'backend' | 'devops' | 'tools' | 'design' | 'ai';
+  category: 'frontend' | 'backend' | 'devops' | 'tools' | 'design' | 'ai' | 'language' | 'database' | 'ml' | 'testing' | 'other';
   icon?: string;
 }
 
