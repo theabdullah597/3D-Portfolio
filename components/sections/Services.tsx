@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, Server, Pen, Cpu, Cloud, Zap, Check, ArrowRight } from 'lucide-react';
+import { Monitor, Server, Pen, Cpu, Cloud, Zap, Check, ArrowRight, Layout, Shield } from 'lucide-react';
 import { SectionWrapper } from '@/components/common/SectionWrapper';
 import { services } from '@/config/portfolio';
 import { fadeInUp, staggerContainer } from '@/config/animations';
@@ -15,6 +15,8 @@ const iconMap: Record<string, React.ElementType> = {
   cpu: Cpu,
   cloud: Cloud,
   zap: Zap,
+  layout: Layout,
+  shield: Shield,
 };
 
 export function Services() {

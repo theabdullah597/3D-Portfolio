@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Download, MapPin, Mail, Calendar, Award } from 'lucide-react';
+import Image from 'next/image';
 import { SectionWrapper } from '@/components/common/SectionWrapper';
 import { MagneticButton } from '@/components/common/MagneticButton';
 import { personalInfo, education, achievements } from '@/config/portfolio';
@@ -28,10 +29,8 @@ export function About() {
             <div className="relative glass rounded-2xl p-8 border border-white/10">
               {/* Avatar placeholder */}
               <div className="flex items-start gap-6 mb-6">
-                <div className="relative w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0">
-                  <div className="w-full h-full bg-gradient-to-br from-violet-600 via-violet-500 to-cyan-500 flex items-center justify-center">
-                    <span className="text-3xl font-bold text-white">AM</span>
-                  </div>
+                <div className="relative w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 border border-white/10">
+                  <Image src="/images/logo.png" alt="Abdullah Avatar" fill sizes="80px" className="object-cover" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white">{personalInfo.name}</h3>
@@ -149,11 +148,11 @@ export function About() {
             </p>
             <div className="space-y-3">
               {[
-                { label: 'Specialization', value: 'Frontend / Full Stack' },
-                { label: 'Industries', value: 'SaaS, Fintech, AI' },
-                { label: 'Team Size Led', value: 'Up to 12 engineers' },
-                { label: 'Preferred Stack', value: 'Next.js · TypeScript · AWS' },
-                { label: 'Working Since', value: '2016' },
+                { label: 'Specialization', value: 'Web Development & Machine Learning' },
+                { label: 'Current Focus', value: 'Machine Learning, System Design' },
+                { label: 'Preferred Stack', value: 'Modern Web Technologies' },
+                { label: 'Location', value: 'Pakistan' },
+                { label: 'Languages', value: 'English, Urdu' },
               ].map((fact) => (
                 <div key={fact.label} className="flex items-center justify-between py-2 border-b border-white/5 last:border-0">
                   <span className="text-sm text-white/40">{fact.label}</span>

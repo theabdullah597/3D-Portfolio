@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 import { navItems } from '@/config/portfolio';
 import { MagneticButton } from '@/components/common/MagneticButton';
 import { cn } from '@/lib/utils';
@@ -51,8 +52,8 @@ export function Navbar() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           scrolled
-            ? 'py-3 backdrop-blur-xl bg-[#080810]/80 border-b border-white/[0.06]'
-            : 'py-6',
+            ? 'py-4 backdrop-blur-xl bg-[#080810]/40 border-b border-white/[0.04] shadow-[0_8px_32px_rgba(0,0,0,0.3)]'
+            : 'py-8',
         )}
         role="navigation"
         aria-label="Main navigation"
@@ -63,16 +64,20 @@ export function Navbar() {
             href="#"
             className="relative group"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            aria-label="Alex Morgan - Home"
+            aria-label="Abdullah - Home"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <div className="flex items-center gap-3">
-              <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center shadow-lg shadow-violet-500/30 group-hover:shadow-violet-500/50 transition-shadow duration-300">
-                <span className="text-white font-bold text-sm">A</span>
-              </div>
-              <span className="text-white font-semibold text-sm tracking-tight hidden sm:block">
-                Alex Morgan
+              <motion.div 
+                className="relative flex items-center justify-center w-10 h-10 rounded-xl overflow-hidden border border-white/10"
+                whileHover={{ scale: 1.05, borderRadius: '50%' }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image src="/images/logo.png" alt="Abdullah Logo" fill sizes="40px" className="object-cover" />
+              </motion.div>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 font-bold text-base tracking-tight hidden sm:block">
+                Abdullah
               </span>
             </div>
           </motion.a>

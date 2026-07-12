@@ -39,6 +39,10 @@ export function Testimonials() {
 
   const t = testimonials[current];
 
+  if (!testimonials || testimonials.length === 0) {
+    return null;
+  }
+
   return (
     <SectionWrapper
       id="testimonials"

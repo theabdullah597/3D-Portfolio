@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 /**
  * Cinematic loading screen that plays once on first visit.
@@ -55,8 +56,8 @@ export function LoadingScreen() {
           >
             <div className="relative w-16 h-16">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-600 to-cyan-600 opacity-20 blur-xl" />
-              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center">
-                <span className="text-white font-bold text-2xl tracking-tight">A</span>
+              <div className="relative w-16 h-16 rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(124,58,237,0.3)]">
+                <Image src="/images/logo.png" alt="Abdullah Logo" fill sizes="64px" className="object-cover" />
               </div>
             </div>
           </motion.div>
@@ -71,7 +72,8 @@ export function LoadingScreen() {
             <div className="relative h-px bg-white/10 rounded-full overflow-hidden">
               <motion.div
                 className="absolute inset-y-0 left-0 bg-gradient-to-r from-violet-600 via-violet-400 to-cyan-500"
-                style={{ width: `${progress}%` }}
+                initial={{ width: '0%' }}
+                animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.05 }}
               />
             </div>

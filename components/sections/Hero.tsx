@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Twitter, Download, ExternalLink } from 'lucide-react';
+import { ArrowDown, Download, ExternalLink } from 'lucide-react';
+import { socialIconMap } from '@/components/common/SocialIcons';
 import { MagneticButton } from '@/components/common/MagneticButton';
 import { personalInfo, socialLinks, achievements } from '@/config/portfolio';
 import { AnimatedCounter } from '@/components/common/AnimatedCounter';
@@ -48,20 +49,14 @@ function useTypingAnimation(words: string[], speed = 80, pause = 2000) {
   return text;
 }
 
-const iconMap: Record<string, React.ElementType> = {
-  github: Github,
-  linkedin: Linkedin,
-  twitter: Twitter,
-};
+
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const typedText = useTypingAnimation([
-    'Senior Engineer',
-    'UI/UX Craftsman',
-    'Performance Obsessed',
-    'Full Stack Builder',
-    '3D Web Creator',
+    'Software Engineering Student',
+    'Full Stack Web Developer',
+    'Machine Learning Engineer',
   ]);
 
   // Mouse parallax for hero content
@@ -105,7 +100,7 @@ export function Hero() {
       {/* Hero Content */}
       <motion.div
         style={{ x: contentX, y: contentY }}
-        className="relative z-10 container-custom w-full pt-32"
+        className="relative z-10 container-custom w-full pt-48 md:pt-56 pb-20"
       >
         <motion.div
           variants={staggerContainer}
@@ -118,25 +113,23 @@ export function Hero() {
             <div className="glass border border-white/10 rounded-full px-4 py-2 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-xs font-medium text-white/60">
-                Available for new projects
+                {/* @ts-ignore */}
+                {personalInfo.status || 'Available for Freelance • Open to Internship • Open to Remote Opportunities'}
               </span>
             </div>
           </motion.div>
 
           {/* Main heading */}
           <motion.div variants={fadeInUp} className="overflow-hidden mb-6">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[1.05]">
-              <span className="text-white">Crafting Digital</span>
-              <br />
-              <span className="gradient-text">Experiences</span>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[1.05] pb-2">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/60 drop-shadow-2xl">{personalInfo.name}</span>
             </h1>
           </motion.div>
 
           {/* Typing animation */}
           <motion.div variants={fadeInUp} className="mb-8 h-10 flex items-center justify-center">
             <div className="flex items-center gap-1">
-              <span className="text-xl md:text-2xl text-white/40 font-light">I am a </span>
-              <span className="text-xl md:text-2xl text-violet-400 font-medium min-w-[200px] text-left">
+              <span className="text-xl md:text-2xl text-violet-400 font-medium min-w-[200px] text-center">
                 {typedText}
                 <span className="animate-pulse ml-0.5 opacity-80">|</span>
               </span>
@@ -162,7 +155,7 @@ export function Hero() {
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <ExternalLink size={16} />
-              View My Work
+              View Projects
             </MagneticButton>
             <MagneticButton
               variant="ghost"
@@ -170,7 +163,14 @@ export function Hero() {
               href={personalInfo.resumeUrl}
             >
               <Download size={16} />
-              Download CV
+              Download Resume
+            </MagneticButton>
+            <MagneticButton
+              variant="ghost"
+              size="lg"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Contact Me
             </MagneticButton>
           </motion.div>
 
@@ -200,7 +200,7 @@ export function Hero() {
             className="flex items-center justify-center gap-4"
           >
             {socialLinks.map((link) => {
-              const Icon = iconMap[link.icon];
+              const Icon = socialIconMap[link.icon];
               return (
                 <motion.a
                   key={link.platform}

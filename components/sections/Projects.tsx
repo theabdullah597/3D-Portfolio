@@ -2,7 +2,9 @@
 
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
+import { ExternalLink, ArrowUpRight } from 'lucide-react';
+import { GithubIcon } from '@/components/common/SocialIcons';
 import { SectionWrapper } from '@/components/common/SectionWrapper';
 import { MagneticButton } from '@/components/common/MagneticButton';
 import { projects } from '@/config/portfolio';
@@ -40,6 +42,15 @@ function ProjectCard({ project }: { project: Project }) {
     >
       {/* Image / Gradient hero */}
       <div className={cn('relative h-52 bg-gradient-to-br', gradient, 'overflow-hidden')}>
+        {project.image && (
+          <Image 
+            src={project.image} 
+            alt={project.title} 
+            fill 
+            className="object-cover opacity-40 mix-blend-overlay group-hover:opacity-100 group-hover:mix-blend-normal transition-all duration-500"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        )}
         {/* Animated grid pattern */}
         <div
           className="absolute inset-0 opacity-20"
@@ -90,7 +101,7 @@ function ProjectCard({ project }: { project: Project }) {
                   whileTap={{ scale: 0.95 }}
                   aria-label={`View ${project.title} on GitHub`}
                 >
-                  <Github size={16} />
+                  <GithubIcon size={16} />
                 </motion.a>
               )}
             </motion.div>
@@ -136,8 +147,8 @@ export function Projects() {
   const filtered = activeFilter === 'All'
     ? projects
     : projects.filter(
-        (p) => p.category.toLowerCase() === activeFilter.toLowerCase(),
-      );
+      (p) => p.category.toLowerCase() === activeFilter.toLowerCase(),
+    );
 
   return (
     <SectionWrapper
@@ -184,11 +195,11 @@ export function Projects() {
       {/* CTA */}
       <motion.div variants={fadeInUp} className="mt-12 text-center">
         <MagneticButton
-          href="https://github.com"
+          href="https://github.com/theabdullah597"
           variant="ghost"
           size="md"
         >
-          <Github size={16} />
+          <GithubIcon size={16} />
           View All on GitHub
         </MagneticButton>
       </motion.div>

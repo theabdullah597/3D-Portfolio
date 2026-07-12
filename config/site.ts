@@ -3,26 +3,26 @@
 // ============================================================
 
 export const siteConfig = {
-  name: 'Alex Morgan',
-  title: 'Alex Morgan — Senior Software Engineer',
+  name: 'Abdullah',
+  title: 'Abdullah — Software Engineering Student & Full Stack Developer',
   description:
-    'Senior Software Engineer specializing in React, Next.js, and cloud-native architectures. Building exceptional digital experiences at the intersection of design and engineering.',
-  url: 'https://alexmorgan.dev',
-  ogImage: '/og-image.jpg',
-  twitterHandle: '@alexmorgan_dev',
+    'Building modern, scalable web applications and intelligent solutions with a passion for clean architecture and emerging AI technologies.',
+  url: 'https://abdullah-portfolio.com',
+  ogImage: '/images/og-image.jpg',
+  twitterHandle: '@abdullah_dev',
   keywords: [
-    'Senior Software Engineer',
-    'React Developer',
-    'Next.js',
-    'TypeScript',
-    'Frontend Engineer',
+    'Abdullah',
+    'Software Engineer',
     'Full Stack Developer',
-    'San Francisco',
-    'Portfolio',
+    'Machine Learning Engineer',
+    'React',
+    'Next.js',
+    'Node.js',
+    'Python',
   ],
   author: {
-    name: 'Alex Morgan',
-    email: 'alex@example.com',
+    name: 'Abdullah',
+    email: 'contact@example.com',
   },
   links: {
     github: 'https://github.com',

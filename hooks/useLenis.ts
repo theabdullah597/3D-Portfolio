@@ -27,7 +27,7 @@ export function useLenis(options: LenisOptions = {}) {
     let rafId: number;
 
     // Dynamically import Lenis to avoid SSR issues
-    import('@studio-freight/lenis').then(({ default: Lenis }) => {
+    import('lenis').then(({ default: Lenis }) => {
       lenis = new Lenis({
         duration: options.duration ?? 1.2,
         easing: options.easing ?? ((t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))),

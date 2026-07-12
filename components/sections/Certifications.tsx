@@ -49,7 +49,7 @@ export function Certifications() {
                   className="flex items-center gap-1 text-xs text-violet-400 hover:text-violet-300 transition-colors"
                   aria-label={`View ${cert.title} credential`}
                 >
-                  Verify <ExternalLink size={10} />
+                  {/* Verify <ExternalLink size={10} /> */}
                 </a>
               )}
             </div>
