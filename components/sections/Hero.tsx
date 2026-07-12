@@ -100,7 +100,7 @@ export function Hero() {
       {/* Hero Content */}
       <motion.div
         style={{ x: contentX, y: contentY }}
-        className="relative z-10 container-custom w-full pt-48 md:pt-56 pb-20"
+        className="relative z-10 container-custom w-full pt-64 md:pt-56 pb-20 mt-12 md:mt-0"
       >
         <motion.div
           variants={staggerContainer}

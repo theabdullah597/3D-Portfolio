@@ -1,8 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 export function PremiumBackground() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   return (
     <div className="fixed inset-0 z-[-1] bg-[#020205] overflow-hidden pointer-events-none">
       {/* Futuristic Grid Layer */}
@@ -29,7 +33,7 @@ export function PremiumBackground() {
       />
 
       {/* Floating Ambient Dust */}
-      {[...Array(30)].map((_, i) => (
+      {mounted && [...Array(30)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute w-1 h-1 bg-white/40 rounded-full blur-[1px]"
