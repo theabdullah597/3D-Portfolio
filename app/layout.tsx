@@ -58,6 +58,9 @@ export const metadata: Metadata = {
     icon: '/images/logo.png',
     apple: '/images/logo.png',
   },
+  verification: {
+    google: '6b4EfEBdTDxOthK2g9vr9e1PSRNG8o9FV0JGwhlxD_s',
+  },
 };
 
 export const viewport: Viewport = {
